@@ -36,7 +36,7 @@ class SystemPromptLoader(private val context: Context) {
         }
 
         Log.d("SYSTEM_PROMPT_BUILDER", prompt)
-        return GeminiMessage(role = MessageRole.MODEL, parts = listOf(TextPart(prompt)))
+        return GeminiMessage(role = MessageRole.USER, parts = listOf(TextPart(prompt)))
     }
 
     private fun generateActionsDescription(): String {

@@ -1,8 +1,6 @@
 package com.panda.ai.v2.message_manager
 
 import android.content.Context
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.panda.ai.v2.ActionResult
 import com.panda.ai.v2.AgentOutput
 import com.panda.ai.v2.AgentSettings
@@ -32,7 +30,6 @@ class MemoryManager(
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun createStateMessage(
         modelOutput: AgentOutput?,
         result: List<ActionResult>?,
