@@ -68,7 +68,7 @@ class Agent(
                     speechCoordinator.speakToUser("Agent failed after multiple attempts. Stopping execution.")
                     break
                 }
-                delay(1000)
+                delay(500)
                 continue
             }
 
@@ -129,7 +129,7 @@ class Agent(
             }
 
             state.nSteps++
-            delay(1000)
+            delay(500)
         }
 
         if (state.nSteps > maxSteps) {

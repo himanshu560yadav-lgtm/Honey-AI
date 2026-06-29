@@ -99,7 +99,7 @@ class ActionExecutor(private val finger: Finger) {
                         val center = getCenterFromNode(elementNode)
                         if (center != null) {
                             finger.tap(center.first, center.second)
-                            delay(500)
+                            delay(300)
                             ActionResult(longTermMemory = "Escalated to physical tap at ${center.first},${center.second} on '$text'.")
                         } else {
                             ActionResult(error = "Click sent to '$text' but screen did not change, and cannot find coordinates.")
@@ -170,8 +170,8 @@ class ActionExecutor(private val finger: Finger) {
                 ActionResult(longTermMemory = "Opened the app switcher.")
             }
             Action.Wait -> {
-                delay(5_000)
-                ActionResult(longTermMemory = "Waited for 5 seconds.")
+                delay(3_000)
+                ActionResult(longTermMemory = "Waited for 3 seconds.")
             }
             is Action.ScrollDown -> {
                 finger.scrollDown(action.amount)

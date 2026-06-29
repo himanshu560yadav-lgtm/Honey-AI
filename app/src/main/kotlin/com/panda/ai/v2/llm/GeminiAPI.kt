@@ -36,7 +36,7 @@ class GeminiApi(
         responseMimeType = "application/json"
     }.build()
 
-    private val requestOptions = RequestOptions(timeout = 60.seconds)
+    private val requestOptions = RequestOptions(timeout = 30.seconds)
 
     suspend fun generateAgentOutput(messages: List<GeminiMessage>): AgentOutput? {
         val jsonString = retryWithBackoff(times = maxRetry) {
@@ -97,8 +97,8 @@ class ContentBlockedException(message: String) : Exception(message)
 
 private suspend fun <T> retryWithBackoff(
     times: Int,
-    initialDelay: Long = 1000L,
-    maxDelay: Long = 16000L,
+    initialDelay: Long = 500L,
+    maxDelay: Long = 8000L,
     factor: Double = 2.0,
     block: suspend () -> T
 ): T? {
